@@ -64,5 +64,8 @@ names(mergedata) <- gsub("\\(\\)", "", names(mergedata))
 
 ## Create a tidy data set including the mean of each mean/std variable grouped 
 ## by participant and activity
-tidydata <- summarise(grp, across(everything(), list(mean)))
+grp <- group_by(mergedata, participant, activity)
+tidydata <- summarize(grp, across(everything(), list(mean)))
 names(tidydata) <- names(mergedata)
+
+View(tidydata)
