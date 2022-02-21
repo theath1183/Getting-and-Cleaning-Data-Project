@@ -69,3 +69,6 @@ tidydata <- summarize(grp, across(everything(), list(mean)))
 names(tidydata) <- names(mergedata)
 
 View(tidydata)
+
+## The following line creates a text file with the tidy data.
+## write.table(tidydata, "./tidydata.txt")
